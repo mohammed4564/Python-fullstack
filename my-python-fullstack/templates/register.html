@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
-    <link rel="stylesheet" href="../static/register.css"/>
+    <link rel="stylesheet" href="../static/register.css" />
+ 
+    
 </head>
-<body>
-    <div>
-        <h3 style="text-align: center;">Register Form</h3>
 
-        <div class="register_container">
-            <form id="registrationForm">
-                <input type="text" placeholder="Enter your name" id="name" />
-                <input type="number" placeholder="Enter your age" id="age" />
-                <input type="password" placeholder="Enter your password" id="password"  />
-                <input type="email" placeholder="Enter your email" id="email" />
-                <button type="button" onclick="getValue()">Submit</button>
-            </form>
-        </div>
+<body onload="fetchUsers()">
+    <div class="container">
+        <h3 style="color: blue;">Register Form</h3>
+        <form id="registrationForm">
+            <input type="text" placeholder="Enter your name" id="name" required />
+            <input type="number" placeholder="Enter your age" id="age" required />
+            <input type="password" placeholder="Enter your password" id="password" required />
+            <input type="email" placeholder="Enter your email" id="email" required />
+            <button type="button" onclick="getValue()">Submit</button>
+        </form>
+
     </div>
 
-    <script src="register.js"></script>
+    <div>
+        <hr width="90%">
+
+        <table>
+            <caption style="margin: 10px 0px; font-size: 18px; font-weight: bold;">Registered Users</caption>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Age</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="containers">
+                <!-- User data will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../static/register.js"></script>
 </body>
+
 </html>
